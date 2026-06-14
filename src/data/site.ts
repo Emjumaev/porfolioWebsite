@@ -27,12 +27,12 @@ export const skillGroups: SkillGroup[] = [
     items: ['Swift (Expert)', 'Python (Expert)', 'C++', 'Java'],
   },
   {
-    label: 'iOS & Frameworks',
-    items: ['SwiftUI', 'UIKit', 'Core Bluetooth', 'AVFoundation'],
-  },
-  {
     label: 'Technologies & Tools',
     items: [
+      'SwiftUI',
+      'UIKit',
+      'Core Bluetooth',
+      'AVFoundation',
       'Git',
       'Figma',
       'Jira',
