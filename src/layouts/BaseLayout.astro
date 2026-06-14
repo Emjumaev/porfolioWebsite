@@ -25,8 +25,31 @@ const pageTitle = title ? `${title} · ${site.name}` : `${site.name} · ${site.r
     <meta property="og:title" content={pageTitle} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
+    <meta name="theme-color" content="#070b14" />
+    {/* Set theme before paint to avoid a flash of the wrong mode */}
+    <script is:inline>
+      (function () {
+        try {
+          var stored = localStorage.getItem('theme');
+          var theme =
+            stored ||
+            (window.matchMedia('(prefers-color-scheme: light)').matches
+              ? 'light'
+              : 'dark');
+          document.documentElement.dataset.theme = theme;
+        } catch (e) {
+          document.documentElement.dataset.theme = 'dark';
+        }
+      })();
+    </script>
   </head>
   <body>
+    {/* Floating color orbs that the glass surfaces refract */}
+    <div class="bg-orbs" aria-hidden="true">
+      <span class="orb orb-1"></span>
+      <span class="orb orb-2"></span>
+      <span class="orb orb-3"></span>
+    </div>
     <Header />
     <main class="wrap">
       <slot />
