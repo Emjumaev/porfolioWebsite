@@ -94,7 +94,6 @@ export const experience: Job[] = [
       'Developed an AI-powered smart assistant for the banking app, enabling payments and P2P transactions via natural language chat.',
       'Integrated real-time speech recognition and text-to-speech, reducing latency by 30%.',
       'Established a backend-driven architecture with JSON-based configs, enabling assistant updates without requiring app releases.',
-      'Deployed Firebase Analytics to monitor 1M+ monthly interactions, supporting continuous UX optimization.',
       'Collaborated with cross-functional teams, including mobile, ML and backend engineers, designers, and QA specialists, to ensure seamless integration of AI features.',
     ],
   },
