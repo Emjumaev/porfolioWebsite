@@ -3,9 +3,10 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
 import {
   site,
-  skills,
+  skillGroups,
   experience,
   education,
+  certifications,
   awards,
 } from '../data/site';
 
@@ -16,19 +17,34 @@ const posts = (await getCollection('blog'))
 
 const fmt = (d: Date) =>
   d.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
+
+const initials = site.name
+  .split(' ')
+  .map((n) => n[0])
+  .join('');
 ---
 
 <BaseLayout>
   <!-- Hero -->
   <section class="hero">
-    <h1>{site.name}</h1>
-    <p class="role">{site.role} · {site.location}</p>
-    <p class="lead">{site.tagline}</p>
-    <div class="socials">
-      <a href={site.socials.github}>GitHub</a>
-      <a href={site.socials.linkedin}>LinkedIn</a>
-      <a href={site.socials.leetcode}>LeetCode</a>
-      <a href={site.socials.email}>Email</a>
+    <div class="avatar">{initials}</div>
+    <div>
+      <h1>{site.name}</h1>
+      <p class="role">
+        {site.role}<span class="dot">·</span>{site.location}
+      </p>
+    </div>
+    <div class="hero-lead">
+      <p class="lead">{site.tagline}</p>
+      <div class="availability">
+        <span class="pulse"></span> Open to iOS &amp; software engineering roles
+      </div>
+      <div class="socials">
+        <a href={site.socials.github}>GitHub</a>
+        <a href={site.socials.linkedin}>LinkedIn</a>
+        <a href={site.socials.leetcode}>LeetCode</a>
+        <a href={site.socials.email}>Email</a>
+      </div>
     </div>
   </section>
 
@@ -36,9 +52,23 @@ const fmt = (d: Date) =>
   <section id="about">
     <p class="section-title">About</p>
     <p class="muted">{site.summary}</p>
-    <div class="chips" style="margin-top: 20px;">
-      {skills.map((s) => <span class="chip">{s}</span>)}
-    </div>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills">
+    <p class="section-title">Skills</p>
+    {
+      skillGroups.map((group) => (
+        <div class="skill-group">
+          <div class="label">{group.label}</div>
+          <div class="chips">
+            {group.items.map((s) => (
+              <span class="chip">{s}</span>
+            ))}
+          </div>
+        </div>
+      ))
+    }
   </section>
 
   <!-- Experience -->
@@ -51,6 +81,11 @@ const fmt = (d: Date) =>
             <div>
               <h3>{job.company}</h3>
               <div class="role-line">{job.role}</div>
+              <div class="sub">
+                {job.employer ? `${job.employer} · ` : ''}
+                {job.project}
+                {job.location ? ` · ${job.location}` : ''}
+              </div>
             </div>
             <span class="period">{job.period}</span>
           </div>
@@ -74,6 +109,7 @@ const fmt = (d: Date) =>
             <div>
               <h3>{e.school}</h3>
               <div class="role-line">{e.degree}</div>
+              {e.detail && <div class="sub">{e.detail}</div>}
             </div>
             <span class="period">{e.period}</span>
           </div>
@@ -82,9 +118,26 @@ const fmt = (d: Date) =>
     }
   </section>
 
+  <!-- Certifications -->
+  <section id="certifications">
+    <p class="section-title">Certifications</p>
+    <div class="grid-2">
+      {
+        certifications.map((c) => (
+          <div class="card">
+            <h3 style="font-size: 1rem;">{c.name}</h3>
+            <div class="sub">
+              {c.issuer} · {c.year}
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+
   <!-- Awards -->
   <section id="awards">
-    <p class="section-title">Honors & Awards</p>
+    <p class="section-title">Honors &amp; Awards</p>
     <ul class="clean">
       {awards.map((a) => <li>{a}</li>)}
     </ul>
