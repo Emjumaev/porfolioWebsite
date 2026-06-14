@@ -74,6 +74,8 @@ h3 {
 
 section {
   margin: 64px 0;
+  /* Offset so sticky header (62px) doesn't cover the top when jumping to anchors */
+  scroll-margin-top: 80px;
 }
 
 .section-title {
