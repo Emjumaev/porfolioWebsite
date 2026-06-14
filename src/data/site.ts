@@ -7,7 +7,7 @@ export const site = {
   tagline:
     'Engineering AI-driven apps used by millions — focused on speed, usability, and reliability.',
   summary:
-    "iOS engineer with a track record of shipping fintech and AI features to apps serving millions of users. Currently pursuing an M.Sc. in Computer Science (AI specialization) at the University of Freiburg while building reliable, delightful mobile experiences.",
+    "Software engineer with a track record of shipping fintech and AI features to apps serving millions of users. Currently pursuing an M.Sc. in Computer Science (AI specialization) at the University of Freiburg while building reliable, delightful mobile experiences.",
   socials: {
     github: 'https://github.com/Emjumaev',
     linkedin: 'https://www.linkedin.com/in/mekhriddin-jumaev',
