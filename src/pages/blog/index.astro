@@ -1,0 +1,36 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const posts = (await getCollection('blog'))
+  .filter((p) => !p.data.draft)
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+
+const fmt = (d: Date) =>
+  d.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+---
+
+<BaseLayout title="Blog" description="Articles and notes by Mehriddin Jumaev.">
+  <section style="margin-top: 56px;">
+    <h1 style="margin-bottom: 8px;">Blog</h1>
+    <p class="muted">Notes on iOS, fintech, AI, and building software.</p>
+
+    {
+      posts.length === 0 ? (
+        <p class="muted" style="margin-top: 32px;">No posts yet — check back soon.</p>
+      ) : (
+        <ul class="post-list" style="margin-top: 28px;">
+          {posts.map((post) => (
+            <li>
+              <a class="title" href={`/blog/${post.id}/`}>
+                {post.data.title}
+              </a>
+              <div class="post-meta">{fmt(post.data.pubDate)}</div>
+              <p class="post-desc">{post.data.description}</p>
+            </li>
+          ))}
+        </ul>
+      )
+    }
+  </section>
+</BaseLayout>
