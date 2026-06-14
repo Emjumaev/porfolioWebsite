@@ -76,11 +76,11 @@ export const experience: Job[] = [
     period: 'Sep 2025 — Present',
     location: 'Tashkent, Uzbekistan',
     highlights: [
-      'Helped raise the App Store rating from 3.8 to 4.6 through continuous feature delivery and bug fixes.',
-      'Strengthened security with jailbreak detection, RASP, app-integrity validation, and SSL pinning to mitigate runtime threats.',
-      'Shipped an autopayments feature, enabling users to automate recurring payments and reducing manual actions.',
-      'Integrated debugging and monitoring tools to speed up issue tracking and streamline testing.',
-      'Delivered fintech features used by 100K+ monthly active users alongside PMs, backend, QA, and mobile engineers.',
+      'Improved the app experience and stability, contributing to an increase in App Store rating from 3.8 to 4.6 through continuous feature delivery and bug fixes.',
+      'Strengthened app security by implementing Jailbreak detection, RASP, app integrity validation, and SSL pinning to mitigate runtime threats and secure user data.',
+      'Shipped an “autopayments” feature for the mobile banking app, enabling users to automate recurring payments and reducing manual payment actions.',
+      'Integrated debugging and monitoring tools to improve issue tracking, streamline testing, and reduce time spent identifying production issues.',
+      'Worked closely with product managers, backend engineers, QA, and mobile developers to deliver fintech features used by 100K+ monthly active users.',
     ],
   },
   {
@@ -91,11 +91,11 @@ export const experience: Job[] = [
     period: 'Jan 2024 — Aug 2025',
     location: 'Tashkent, Uzbekistan',
     highlights: [
-      'Developed an AI-powered smart assistant enabling payments and P2P transactions via natural-language chat.',
+      'Developed an AI-powered smart assistant for the banking app, enabling payments and P2P transactions via natural language chat.',
       'Integrated real-time speech recognition and text-to-speech, reducing latency by 30%.',
-      'Established a backend-driven architecture with JSON configs, enabling assistant updates without app releases.',
+      'Established a backend-driven architecture with JSON-based configs, enabling assistant updates without requiring app releases.',
       'Deployed Firebase Analytics to monitor 1M+ monthly interactions, supporting continuous UX optimization.',
-      'Collaborated with mobile, ML, backend, design, and QA teams to integrate AI features seamlessly.',
+      'Collaborated with cross-functional teams, including mobile, ML and backend engineers, designers, and QA specialists, to ensure seamless integration of AI features.',
     ],
   },
   {
@@ -106,11 +106,11 @@ export const experience: Job[] = [
     period: 'May 2023 — Dec 2023',
     location: 'Tashkent, Uzbekistan',
     highlights: [
-      'Led development and maintenance of a high-traffic banking app serving ~2 million users.',
-      'Led migration from MVP to MVVM, streamlining data flow and cutting code complexity.',
-      'Refactored UI from XIBs/Storyboards to programmatic Swift, cutting XIB usage by 50%.',
-      'Integrated Face ID / Touch ID authentication, reducing average login time by 60%.',
-      'Managed App Store + TestFlight releases with 100% guideline compliance and near-zero rejections.',
+      'Led the development and maintenance of a high-traffic banking app serving ~2 million users, focusing on performance, design, and architecture improvements.',
+      'Led migration from MVP to MVVM architecture, streamlining data flow and reducing code complexity.',
+      'Refactored UI by replacing XIBs & Storyboards with programmatic Swift, cutting XIB usage by 50% and improving maintainability.',
+      'Integrated Face ID and Touch ID authentication, enhancing app security and reducing average login time by 60%.',
+      'Managed App Store submissions and TestFlight distributions, ensuring 100% compliance with Apple’s guidelines and reducing rejection rate to near zero.',
     ],
   },
   {
