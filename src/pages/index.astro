@@ -43,23 +43,19 @@ const fmt = (d: Date) =>
     </div>
   </section>
 
-  <!-- About -->
-  <section id="about">
-    <p class="section-title">About</p>
-    <p class="muted">{site.summary}</p>
-  </section>
-
-  <!-- Skills -->
-  <section id="skills">
-    <p class="section-title">Skills</p>
+  <!-- Education -->
+  <section id="education">
+    <p class="section-title">Education</p>
     {
-      skillGroups.map((group) => (
-        <div class="skill-group">
-          <div class="label">{group.label}</div>
-          <div class="chips">
-            {group.items.map((s) => (
-              <span class="chip">{s}</span>
-            ))}
+      education.map((e) => (
+        <div class="card">
+          <div class="top">
+            <div>
+              <h3>{e.school}</h3>
+              <div class="role-line">{e.degree}</div>
+              {e.detail && <div class="sub">{e.detail}</div>}
+            </div>
+            <span class="period">{e.period}</span>
           </div>
         </div>
       ))
@@ -94,23 +90,27 @@ const fmt = (d: Date) =>
     }
   </section>
 
-  <!-- Education -->
-  <section id="education">
-    <p class="section-title">Education</p>
+  <!-- Skills -->
+  <section id="skills">
+    <p class="section-title">Skills</p>
     {
-      education.map((e) => (
-        <div class="card">
-          <div class="top">
-            <div>
-              <h3>{e.school}</h3>
-              <div class="role-line">{e.degree}</div>
-              {e.detail && <div class="sub">{e.detail}</div>}
-            </div>
-            <span class="period">{e.period}</span>
+      skillGroups.map((group) => (
+        <div class="skill-group">
+          <div class="label">{group.label}</div>
+          <div class="chips">
+            {group.items.map((s) => (
+              <span class="chip">{s}</span>
+            ))}
           </div>
         </div>
       ))
     }
+  </section>
+
+  <!-- About -->
+  <section id="about">
+    <p class="section-title">About</p>
+    <p class="muted">{site.summary}</p>
   </section>
 
   <!-- Certifications -->
