@@ -1,7 +1,7 @@
 // Central place for your personal info. Edit here and it updates across the site.
 export const site = {
   name: 'Mehriddin Jumaev',
-  role: 'Software Engineer · iOS Developer',
+  role: 'Software Engineer',
   location: 'Freiburg, Germany',
   email: 'jumaevmekhriddin10@gmail.com',
   tagline:
@@ -24,7 +24,7 @@ export type SkillGroup = {
 export const skillGroups: SkillGroup[] = [
   {
     label: 'Languages',
-    items: ['Swift (Expert)', 'C++', 'Java'],
+    items: ['Swift (Expert)', 'Python (Expert)', 'C++', 'Java'],
   },
   {
     label: 'iOS & Frameworks',
@@ -33,7 +33,6 @@ export const skillGroups: SkillGroup[] = [
   {
     label: 'Technologies & Tools',
     items: [
-      'Python (Expert)',
       'Git',
       'Figma',
       'Jira',
